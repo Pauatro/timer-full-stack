@@ -1,0 +1,19 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "front end of the full stack timer challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pauatro/timer-full-stack.git"
+  },
+  "author": "Pau Atienza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pauatro/timer-full-stack/issues"
+  },
+  "homepage": "https://github.com/Pauatro/timer-full-stack#readme"
+}
