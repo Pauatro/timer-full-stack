@@ -1,0 +1,19 @@
+.header-container{
+    height: 8vh;
+    width: 100vw;
+    padding: 2vh;
+    box-sizing: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-selection-container{
+    height: 4vh;
+    width: 16vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
