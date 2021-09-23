@@ -1,35 +1,25 @@
 import React from 'react'
 import { transformMsToTimeString } from '../utils/formatting'
-import Button from './Button'
 import './Timer.css'
+import { TimerButton } from './Button'
 
 const Timer = ()=>{
     return (
         <div className="timer-container">
-            <TimeDisplay />
-            <TimerButton/>
+            <TimeDisplay time = {242361453}/>
+            <TimerButton time = {242361453}/>
         </div>
     )
 }
 
-const TimerButton = ()=>{
-
-    const time = 242361453
-
-    return (
-        <Button onClick = {()=>{}}>
-            <div>{transformMsToTimeString(time)}</div>
-        </Button>
-    )
+interface ITimerDisplayProps{
+    time: number;
 }
 
-const TimeDisplay =()=>{
-
-    const time = 242361453
-
+const TimeDisplay =(props: ITimerDisplayProps)=>{
     return (
         <div className = "timer-display">
-            {transformMsToTimeString(time)}
+            {transformMsToTimeString(props.time)}
         </div>
     )
 }

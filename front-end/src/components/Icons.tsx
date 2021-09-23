@@ -6,6 +6,8 @@ import lightMoonIcon from '../resources/moon-light.svg'
 import darkMoonIcon from '../resources/moon-dark.svg'
 import lightSunIcon from '../resources/sun-light.svg'
 import darkSunIcon from '../resources/sun-dark.svg'
+import lightPlayIcon from '../resources/play-icon-light.svg'
+import darkPlayIcon from '../resources/play-icon-dark.svg'
 import { EThemes } from '../modules/theme/theme.interfaces'
 
 interface IconProps{
@@ -68,7 +70,22 @@ const MoonIcon = (props: ThemedIconProps)=>{
         <Icon 
             class = "moon-icon" 
             icon = {MoonIcons[props.theme]??lightLogo} 
-            alt = "MVST"
+            alt = "Moon"
+        />
+    )
+}
+
+const PlayIcons = {
+    [EThemes.DARK]: darkPlayIcon,
+    [EThemes.LIGHT]: lightPlayIcon
+}
+
+const PlayIcon = (props: ThemedIconProps)=>{
+    return (
+        <Icon 
+            class = "play-icon" 
+            icon = {PlayIcons[props.theme]??lightLogo} 
+            alt = "Start"
         />
     )
 }
@@ -76,5 +93,6 @@ const MoonIcon = (props: ThemedIconProps)=>{
 export {
     HeaderLogo,
     SunIcon,
-    MoonIcon
+    MoonIcon,
+    PlayIcon
 }

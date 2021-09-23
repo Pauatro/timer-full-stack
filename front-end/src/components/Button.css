@@ -7,3 +7,10 @@ button{
     border-radius: 0.5rem;
     color: var(--font-secondary-color)
 }
+
+.timer-button-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
