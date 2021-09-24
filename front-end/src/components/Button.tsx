@@ -1,31 +1,37 @@
 import React from 'react'
 import { EThemes } from '../modules/theme/theme.interfaces'
-import { transformMsToTimeString } from '../utils/formatting'
+import { transformSecondsToTimeString } from '../utils/formatting'
 import './Button.css'
-import { PlayIcon } from './Icons'
+import { PlayIcon, StopIcon } from './Icons'
 
-interface IButtonProps{
-    onClick: ()=>void;
+interface IButtonProps {
+    onClick: () => void;
     children?: JSX.Element;
 }
 
-const Button = (props: IButtonProps)=>{
-    return <button onClick = {props.onClick}>{props.children}</button>
+const Button = (props: IButtonProps) => {
+    return <button onClick={props.onClick}>{props.children}</button>
 }
 
-interface ITimerButtonProps{
+interface ITimerButtonProps {
     time: number;
     theme: EThemes;
+    onTimerClick: () => void;
+    timerIsActive: boolean;
 }
 
-const TimerButton = (props: ITimerButtonProps)=>{
+const TimerButton = (props: ITimerButtonProps) => {
 
     return (
-        <Button onClick = {()=>{}}>
-            <div className = "timer-button-content">
-                <PlayIcon theme = {props.theme}/>
+        <Button onClick={props.onTimerClick}>
+            <div className="timer-button-content">
+                {
+                    props.timerIsActive ? 
+                    <StopIcon theme={props.theme} /> : 
+                    <PlayIcon theme={props.theme} />
+                }
                 <div>
-                    {transformMsToTimeString(props.time)}
+                    {transformSecondsToTimeString(props.time)}
                 </div>
             </div>
         </Button>

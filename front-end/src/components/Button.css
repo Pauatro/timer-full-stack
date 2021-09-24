@@ -5,12 +5,14 @@ button{
     margin: 0;
     border: none;
     border-radius: 0.5rem;
-    color: var(--font-secondary-color)
+    color: var(--font-secondary-color);
+    cursor: pointer;
+    width: 12rem;
 }
 
 .timer-button-content{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
