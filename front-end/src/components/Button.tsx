@@ -15,6 +15,7 @@ const Button = (props: IButtonProps)=>{
 
 interface ITimerButtonProps{
     time: number;
+    theme: EThemes;
 }
 
 const TimerButton = (props: ITimerButtonProps)=>{
@@ -22,7 +23,7 @@ const TimerButton = (props: ITimerButtonProps)=>{
     return (
         <Button onClick = {()=>{}}>
             <div className = "timer-button-content">
-                <PlayIcon theme = {EThemes.LIGHT}/>
+                <PlayIcon theme = {props.theme}/>
                 <div>
                     {transformMsToTimeString(props.time)}
                 </div>

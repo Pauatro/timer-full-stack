@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
-import { EThemes } from '../modules/theme/theme.interfaces';
 import { HeaderLogo, MoonIcon, SunIcon } from './Icons';
 import Switch from './Switch';
+import { ThemeContext } from '../modules/theme/theme.context';
 
 const Header = () => {
+
+    const { theme } = useContext(ThemeContext)
+
     return  <header className="header-container">
-        <HeaderLogo theme = {EThemes.LIGHT}/>
+        <HeaderLogo theme = {theme}/>
         <div className = "theme-selection-container">
-            <MoonIcon theme = {EThemes.LIGHT}/>
+            <MoonIcon theme = {theme}/>
             <Switch name = "header-switch"/>
-            <SunIcon theme = {EThemes.LIGHT}/>
+            <SunIcon theme = {theme}/>
         </div>
     </header>
 }
