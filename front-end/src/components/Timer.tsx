@@ -1,19 +1,28 @@
 import React, { useContext } from 'react'
-import { transformMsToTimeString } from '../utils/formatting'
+import { transformSecondsToTimeString } from '../utils/formatting'
 import './Timer.css'
 import { TimerButton } from './Button'
 import { ThemeContext } from '../modules/theme/theme.context'
+import { TimerContext } from '../modules/timer/timer.context'
 
 const Timer = ()=>{
 
     const { theme } = useContext(ThemeContext)
+    const { 
+        partialTime, 
+        totalTime, 
+        timerIsActive,
+        toggleTimerIsActive
+    } = useContext(TimerContext)
 
     return (
         <div className="timer-container">
-            <TimeDisplay time = {242361453}/>
+            <TimeDisplay time = {totalTime}/>
             <TimerButton 
                 theme = {theme} 
-                time = {242361453}
+                time = {partialTime}
+                onTimerClick = {toggleTimerIsActive}
+                timerIsActive = {timerIsActive}
             />
         </div>
     )
@@ -26,7 +35,7 @@ interface ITimerDisplayProps{
 const TimeDisplay =(props: ITimerDisplayProps)=>{
     return (
         <div className = "timer-display">
-            {transformMsToTimeString(props.time)}
+            {transformSecondsToTimeString(props.time)}
         </div>
     )
 }

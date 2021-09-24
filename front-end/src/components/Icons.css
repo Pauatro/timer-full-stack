@@ -1,16 +1,8 @@
-.header-logo{
+.header-logo, .sun-icon, .moon-icon{
     height: 4vh;
 }
 
-.sun-icon{
-    height: 4vh;
-}
-
-.moon-icon{
-    height: 4vh;
-}
-
-.play-icon{
+.play-icon, .stop-icon{
     height: 1rem;
     margin-right: 1.5rem;
 }

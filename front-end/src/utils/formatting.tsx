@@ -1,6 +1,5 @@
-export const transformMsToTimeString = (ms: number)=>{
+export const transformSecondsToTimeString = (totalSeconds: number)=>{
 
-    const totalSeconds = Math.trunc(ms/1000)
     const hours = Math.trunc(totalSeconds/3600)
     const minutes = Math.trunc((totalSeconds%3600)/60)
     const seconds = (totalSeconds%3600)%60
