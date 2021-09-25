@@ -1,5 +1,5 @@
 const { getTotalTime, updateTotalTime } = require('../logic/logic')
-const { handleError } = require('../helpers')
+const { handleError } = require('./helpers')
 
 const handleGetTotalTime = (req, res) => {
     try {        

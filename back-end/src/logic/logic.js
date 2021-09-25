@@ -1,5 +1,7 @@
 
-const { getAllTimeCounts } = require('../data/queries')
+const { NonExistenceError } = require('../commons/errors');
+const { getAllTimeCounts, createTimeCount, updateTimeCount } = require('../data/queries')
+require('../commons/polyfills')
 
 const getTotalTime = () => {
     return (async () => {
@@ -17,14 +19,21 @@ const getTotalTime = () => {
 }
 
 const updateTotalTime = (additionalTime) => {
-    return (async () => {
-        const [{ totalTimeSeconds, id }] = await getAllTimeCounts();
+    Number.validate(additionalTime)
 
+    return (async () => {
+        const timeCounts = await getAllTimeCounts();
+
+        if (!timeCounts.length) throw new NonExistenceError('there are no time counts to update')
+
+        const [{ totalTimeSeconds, _id }] = timeCounts
         const newTotalTime = additionalTime + totalTimeSeconds;
 
-        updateTimeCount(id, newTotalTime);
+        await updateTimeCount(_id, newTotalTime);
 
-        return totalTimeSeconds;
+        const [{ totalTimeSeconds: updatedTotalTime }] = await getAllTimeCounts();
+
+        return updatedTotalTime;
     })()
 }
 

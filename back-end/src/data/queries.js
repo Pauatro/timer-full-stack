@@ -8,11 +8,11 @@ const getAllTimeCounts = ()=>{
     return TimeCount.find({}, 'totalTimeSeconds id').lean()
 }
 
-const updateTimeCount = (id, totalTimeSeconds)=>{
-    return TimeCount.updateOne({ _id: id }, {totalTimeSeconds})
+const updateTimeCount = (_id, totalTimeSeconds)=>{
+    return TimeCount.updateOne({ _id }, {totalTimeSeconds})
 }
 
-modules.exports = {
+module.exports = {
     createTimeCount,
     getAllTimeCounts,
     updateTimeCount

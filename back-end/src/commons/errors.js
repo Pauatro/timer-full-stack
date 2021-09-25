@@ -9,9 +9,5 @@ const buildError = function(name) {
 }
 
 module.exports = {
-    DuplicityError: buildError('DuplicityError'),
-    VoidError: buildError('VoidError'),
-    NonExistenceError: buildError('NonExistenceError'),
-    CredentialsError: buildError('CredentialsError'),
-    ValueError: buildError('ValueError')
+    NonExistenceError: buildError('NonExistenceError')
 }

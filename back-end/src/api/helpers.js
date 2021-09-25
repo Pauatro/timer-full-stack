@@ -1,5 +1,4 @@
-const { errors: { DuplicityError, NonExistenceError, CredentialsError } } = require('../../commons')
-const { JsonWebTokenError } = require('jsonwebtoken')
+const { NonExistenceError } = require("../commons/errors")
 
 const handleError = (error, res)=>{
     let status = 500
@@ -8,11 +7,8 @@ const handleError = (error, res)=>{
         case error instanceof TypeError:
             status = 400
             break
-        case error instanceof DuplicityError || error instanceof NonExistenceError:
+        case error instanceof NonExistenceError:
             status = 409
-            break
-        case error instanceof CredentialsError || error instanceof JsonWebTokenError:
-            status = 401
             break
     }
 

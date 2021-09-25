@@ -11,12 +11,12 @@ const express = require('express')
 
 const { name, version } = require('./package.json')
 const { cors } = require('./src/api/middlewares')
-const { mongoose } = require('./src/data')
+const mongoose = require('mongoose')
 console.debug('starting server')
 
 try {
     console.debug('connecting to database')
-
+    console.log(MONGODB_URL)
     mongoose.connect(MONGODB_URL)
         .then(() => {
             console.info(`connected to database ${MONGODB_URL}`)

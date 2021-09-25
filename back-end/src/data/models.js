@@ -2,11 +2,11 @@ const { Schema, model } = require('mongoose')
 
 const timeCount = new Schema({
     totalTimeSeconds: {
-        type: number,
+        type: Number,
         required: true  
     }
 })
 
 module.exports = {
-    timeCount: model('TimeCount', timeCount)
+    TimeCount: model('TimeCount', timeCount)
 }
