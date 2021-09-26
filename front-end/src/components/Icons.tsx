@@ -18,7 +18,7 @@ interface IconProps{
     alt: string;
 }
 
-const Icon = (props: IconProps)=>{
+export const Icon = (props: IconProps)=>{
     return (
         <img 
             className = {props.class} 

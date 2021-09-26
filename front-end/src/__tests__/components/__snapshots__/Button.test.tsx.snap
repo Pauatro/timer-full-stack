@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<button
+  onClick={[Function]}
+/>
+`;
+
+exports[`TimerButton renders correctly in DARK theme 1`] = `
+<button
+  onClick={[Function]}
+>
+  <div
+    className="timer-button-content"
+  >
+    <img
+      alt="Stop"
+      className="stop-icon"
+      src="stop-icon-dark.svg"
+    />
+    <div>
+      0:00:00
+    </div>
+  </div>
+</button>
+`;
+
+exports[`TimerButton renders correctly in LIGHT theme 1`] = `
+<button
+  onClick={[Function]}
+>
+  <div
+    className="timer-button-content"
+  >
+    <img
+      alt="Stop"
+      className="stop-icon"
+      src="stop-icon-light.svg"
+    />
+    <div>
+      0:00:00
+    </div>
+  </div>
+</button>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="toggle-switch-container"
+>
+  <div
+    className="toggle-switch"
+  >
+    <input
+      checked={true}
+      className="toggle-switch-checkbox"
+      id="theme-switch"
+      name="theme-switch"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      className="toggle-switch-label"
+      htmlFor="theme-switch"
+    >
+      <span
+        className="toggle-switch-inner"
+      />
+      <span
+        className="toggle-switch-switch"
+      />
+    </label>
+  </div>
+</div>
+`;

@@ -1,4 +1,4 @@
-import { NonExistenceError } from "../commons/errors"
+import { NonExistenceError } from "../utils/errors"
 import { Response } from 'express'
 import winston = require('winston');
 const expressWinston = require('express-winston');

@@ -12,7 +12,7 @@ const Header = () => {
         <HeaderLogo theme = {theme}/>
         <div className = "theme-selection-container">
             <MoonIcon theme = {theme}/>
-            <Switch name = "header-switch"/>
+            <Switch />
             <SunIcon theme = {theme}/>
         </div>
     </header>

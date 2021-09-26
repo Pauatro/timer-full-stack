@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { TimerService } from "./timer.service";
+import { TimerManager } from "./timer.manager";
 
 interface ITimerContext {
     partialTime: number;
     totalTime: number;
     toggleTimerIsActive: ()=>void;
     timerIsActive: boolean;
+    loading: boolean;
 }
 
 const TimerContext = React.createContext<ITimerContext>({
@@ -13,38 +14,40 @@ const TimerContext = React.createContext<ITimerContext>({
     totalTime: 0,
     toggleTimerIsActive: ()=>{},
     timerIsActive: false,
+    loading: false,
 });
 
 const TimerProvider = (props: any) => {
 
     const [ partialTime, setPartialTime ] = useState(0)
     const [ totalTime, setTotalTime ] = useState(0)
-    const [ timerIsActive, setTimerIsActive ] = useState(false)
     const [ intervalId, setIntervalId ] = useState<NodeJS.Timeout | null>(null)
+    const [ loading, setLoading ] = useState(false)
 
     useEffect(()=>{
         getTotalTime()
     }, [])
 
     const getTotalTime = async()=>{
-        const newTotalTime = await TimerService.getTotalTime()
+        const newTotalTime = await TimerManager.getTotalTime()
         newTotalTime && setTotalTime(newTotalTime)
     }
 
     const toggleTimerIsActive = async ()=>{
-        if (!timerIsActive){
+        if (!intervalId){
             let newIntervalId = setInterval(()=>{
                 setPartialTime(partialTime =>partialTime+1)
             }, 1000)
             setIntervalId(newIntervalId)
-        } else{
-            intervalId && clearInterval(intervalId)
-            const newTotalTime = await TimerService.updateTotalTime(partialTime)
-            newTotalTime && setTotalTime(newTotalTime)
-            setPartialTime(0)
+            return
         }
-        
-        setTimerIsActive(!timerIsActive)
+        setLoading(true)
+        clearInterval(intervalId)
+        setIntervalId(null)
+        const newTotalTime = await TimerManager.updateTotalTime(partialTime)
+        setTotalTime(newTotalTime)
+        setPartialTime(0)
+        setLoading(false)
     }
 
     return (
@@ -53,7 +56,8 @@ const TimerProvider = (props: any) => {
                 partialTime,
                 totalTime,
                 toggleTimerIsActive,
-                timerIsActive
+                timerIsActive: !!intervalId,
+                loading,
             }}
         >
             {props.children}

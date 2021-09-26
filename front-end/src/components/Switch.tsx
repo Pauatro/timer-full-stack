@@ -2,11 +2,7 @@ import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../modules/theme/theme.context';
 import './Switch.css'
 
-interface ISwitchProps {
-    name: string;
-}
-
-const Switch = (props: ISwitchProps) => {
+const Switch = () => {
 
     const { switchTheme } = useContext(ThemeContext)
     const [ checked, setChecked ] = useState(true)
@@ -23,11 +19,11 @@ const Switch = (props: ISwitchProps) => {
                     onChange = {switchChecked}
                     type="checkbox"
                     className="toggle-switch-checkbox"
-                    name={props.name}
-                    id={props.name}
+                    name={"theme-switch"}
+                    id={"theme-switch"}
                     checked = {checked}
                 />
-                <label className="toggle-switch-label" htmlFor={props.name}>
+                <label className="toggle-switch-label" htmlFor={"theme-switch"}>
                     <span className="toggle-switch-inner" />
                     <span className="toggle-switch-switch" />
                 </label>
