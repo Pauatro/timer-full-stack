@@ -1,17 +1,13 @@
 require('dotenv').config()
-
-const { env:  {MONGODB_URL, PORT_CLI} } = process
+import express = require('express')
+import mongoose = require('mongoose')
+const { MONGODB_URL, PORT_CLI } = process.env
 const PORT = PORT_CLI 
-
-const path = require('path')
-
-const { api } = require('./src/api/routes')
-
-const express = require('express')
-
 const { name, version } = require('./package.json')
-const { cors } = require('./src/api/middlewares')
-const mongoose = require('mongoose')
+import { api } from './src/api/routes'
+import { cors } from './src/api/middlewares'
+import { logger } from './src/api/helpers'
+
 console.debug('starting server')
 
 try {
@@ -24,12 +20,14 @@ try {
             const app = express()
 
             app.use(cors)
+            app.use(logger);
             
             app.use('/api', api)
 
+
             // other
 
-            app.get('*', (req, res) => {
+            app.get('*', (req: express.Request, res: express.Response) => {
                 res.status(404).send('This is not the endpoint you\'re looking for')
             })
 
@@ -55,7 +53,7 @@ try {
                 }
             })
         })
-        .catch(error => {
+        .catch((error: Error) => {
             console.error('could not connect to mongo', error)
         })
 } catch (error) {

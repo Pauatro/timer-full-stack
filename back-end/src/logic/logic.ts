@@ -1,9 +1,10 @@
 
-const { NonExistenceError } = require('../commons/errors');
-const { getAllTimeCounts, createTimeCount, updateTimeCount } = require('../data/queries')
-require('../commons/polyfills')
+import { NonExistenceError } from '../commons/errors'
+import { NumberValidations } from '../commons/validations'
+import { getAllTimeCounts, createTimeCount, updateTimeCount } from '../data/queries'
+import '../commons/validations'
 
-const getTotalTime = () => {
+export const getTotalTime = () => {
     return (async () => {
         const timeCounts = await getAllTimeCounts();
 
@@ -18,8 +19,8 @@ const getTotalTime = () => {
     })()
 }
 
-const updateTotalTime = (additionalTime) => {
-    Number.validate(additionalTime)
+export const updateTotalTime = (additionalTime) => {
+    NumberValidations.validate(additionalTime)
 
     return (async () => {
         const timeCounts = await getAllTimeCounts();
@@ -35,9 +36,4 @@ const updateTotalTime = (additionalTime) => {
 
         return updatedTotalTime;
     })()
-}
-
-module.exports = {
-    getTotalTime,
-    updateTotalTime
 }
