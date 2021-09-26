@@ -1,10 +1,10 @@
 require('dotenv').config()
+const { MONGODB_URL } = process.env
 
-const { env: { MONGODB_URL } } = process
-const { getTotalTime } = require('./logic')
-const { expect } = require('chai')
-const mongoose = require('mongoose')
-const { TimeCount } = require('../data/models')
+import { expect } from 'chai'
+import mongoose = require('mongoose')
+import { getTotalTime } from './logic'
+import { TimeCount } from '../data/models'
 
 describe('server logic - retrieve total time', () => {
     before(() => mongoose.connect(MONGODB_URL))

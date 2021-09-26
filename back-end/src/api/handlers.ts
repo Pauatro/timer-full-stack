@@ -1,7 +1,8 @@
-const { getTotalTime, updateTotalTime } = require('../logic/logic')
-const { handleError } = require('./helpers')
+import { getTotalTime, updateTotalTime } from '../logic/logic'
+import { handleError } from './helpers'
+import { Request, Response } from 'express';
 
-const handleGetTotalTime = (req, res) => {
+export const handleGetTotalTime = (req: Request, res: Response) => {
     try {        
         getTotalTime()
             .then(totalTime => res.status(200).send({ totalTime }))
@@ -11,7 +12,7 @@ const handleGetTotalTime = (req, res) => {
     }
 }
 
-const handlePutTotalTime = (req, res) => {
+export const handlePutTotalTime = (req: Request, res: Response) => {
 
     const { body: { timeSeconds } } = req
 
@@ -22,9 +23,4 @@ const handlePutTotalTime = (req, res) => {
     } catch (error) {
         handleError(error, res)
     }
-}
-
-module.exports = {
-    handleGetTotalTime,
-    handlePutTotalTime
 }

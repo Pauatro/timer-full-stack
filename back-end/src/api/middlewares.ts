@@ -1,16 +1,11 @@
-const express = require('express');
+import * as express from 'express'
 
-const cors = (req, res, next) => {
+export const parseBody = express.json()
+
+export const cors = (req: express.Request, res: express.Response, next: ()=>{}) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Headers', '*')
     res.setHeader('Access-Control-Allow-Methods', '*')
 
     next()
-}
-
-const parseBody = express.json();
-
-module.exports =  { 
-    cors,
-    parseBody 
 }

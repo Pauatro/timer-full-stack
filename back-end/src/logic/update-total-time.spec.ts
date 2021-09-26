@@ -1,11 +1,10 @@
 require('dotenv').config()
-
-const { env: { MONGODB_URL } } = process
-const { updateTotalTime } = require('./logic')
-const { expect } = require('chai')
-const mongoose = require('mongoose')
-const { TimeCount } = require('../data/models')
-const { NonExistenceError } = require('../commons/errors')
+const { MONGODB_URL } = process.env
+import { expect } from 'chai'
+import mongoose = require('mongoose')
+import { updateTotalTime } from './logic'
+import { TimeCount } from '../data/models'
+import { NonExistenceError } from '../commons/errors'
 
 describe('server logic - retrieve total time', () => {
     before(() => mongoose.connect(MONGODB_URL))
@@ -36,10 +35,10 @@ describe('server logic - retrieve total time', () => {
 
         it('should fail when input is not a number', () =>{
             try{
-                updateTotalTime().then(()=>{throw new Error()})
+                updateTotalTime('hello').then(()=>{throw new Error()})
             }catch(error){
                 expect(error).to.be.an.instanceof(TypeError)
-                expect(error.message).to.equal('undefined is not a number')
+                expect(error.message).to.equal('hello is not a number')
             }
         })
     })
