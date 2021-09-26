@@ -4,6 +4,6 @@ export abstract class NumberValidations{
     }
     
     static validate = function (number: number) {
-        if (!this.isNumber(number)) throw new TypeError(`${number} is not a number`)
+        if (!NumberValidations.isNumber(number)) throw new TypeError(`${number} is not a number`)
     }
 } 

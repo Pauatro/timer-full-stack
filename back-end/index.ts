@@ -12,7 +12,6 @@ console.debug('starting server')
 
 try {
     console.debug('connecting to database')
-    console.log(MONGODB_URL)
     mongoose.connect(MONGODB_URL)
         .then(() => {
             console.info(`connected to database ${MONGODB_URL}`)

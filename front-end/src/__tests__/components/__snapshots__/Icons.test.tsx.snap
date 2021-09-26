@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderLogo renders correctly on DARK theme 1`] = `
+<img
+  alt="MVST"
+  className="header-logo"
+  src="logo-dark.svg"
+/>
+`;
+
+exports[`HeaderLogo renders correctly on LIGHT theme 1`] = `
+<img
+  alt="MVST"
+  className="header-logo"
+  src="logo-light.svg"
+/>
+`;
+
+exports[`Icon renders correctly 1`] = `
+<img
+  alt="icon"
+  className="icon"
+  src="resources/logo-light.svg"
+/>
+`;
+
+exports[`MoonIcon renders correctly on DARK theme 1`] = `
+<img
+  alt="Moon"
+  className="moon-icon"
+  src="moon-dark.svg"
+/>
+`;
+
+exports[`MoonIcon renders correctly on LIGHT theme 1`] = `
+<img
+  alt="Moon"
+  className="moon-icon"
+  src="moon-light.svg"
+/>
+`;
+
+exports[`PlayIcon renders correctly on DARK theme 1`] = `
+<img
+  alt="Start"
+  className="play-icon"
+  src="play-icon-dark.svg"
+/>
+`;
+
+exports[`PlayIcon renders correctly on LIGHT theme 1`] = `
+<img
+  alt="Start"
+  className="play-icon"
+  src="play-icon-light.svg"
+/>
+`;
+
+exports[`StopIcon renders correctly on DARK theme 1`] = `
+<img
+  alt="Stop"
+  className="stop-icon"
+  src="stop-icon-dark.svg"
+/>
+`;
+
+exports[`StopIcon renders correctly on LIGHT theme 1`] = `
+<img
+  alt="Stop"
+  className="stop-icon"
+  src="stop-icon-light.svg"
+/>
+`;
+
+exports[`SunIcon renders correctly on DARK theme 1`] = `
+<img
+  alt="Sun"
+  className="sun-icon"
+  src="sun-dark.svg"
+/>
+`;
+
+exports[`SunIcon renders correctly on LIGHT theme 1`] = `
+<img
+  alt="Sun"
+  className="sun-icon"
+  src="sun-light.svg"
+/>
+`;

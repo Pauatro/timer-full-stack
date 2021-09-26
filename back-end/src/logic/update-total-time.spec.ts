@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import mongoose = require('mongoose')
 import { updateTotalTime } from './logic'
 import { TimeCount } from '../data/models'
-import { NonExistenceError } from '../commons/errors'
+import { NonExistenceError } from '../utils/errors'
 
 describe('server logic - retrieve total time', () => {
     before(() => mongoose.connect(MONGODB_URL))

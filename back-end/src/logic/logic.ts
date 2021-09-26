@@ -1,8 +1,8 @@
 
-import { NonExistenceError } from '../commons/errors'
-import { NumberValidations } from '../commons/validations'
+import { NonExistenceError } from '../utils/errors'
+import { NumberValidations } from '../utils/validations'
 import { getAllTimeCounts, createTimeCount, updateTimeCount } from '../data/queries'
-import '../commons/validations'
+import '../utils/validations'
 
 export const getTotalTime = () => {
     return (async () => {
