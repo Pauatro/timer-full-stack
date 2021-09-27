@@ -1,5 +1,5 @@
 {
-  "name": "react-node-timer-back-end",
+  "name": "timer-back-end",
   "version": "1.0.0",
   "description": "back end of the timer app created in Node + Typescript",
   "scripts": {
