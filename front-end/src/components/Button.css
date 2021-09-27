@@ -1,0 +1,18 @@
+button{
+    background-color: var(--button-primary-color);
+    padding: 0.75rem 3rem 0.75rem 3rem;
+    font-size: 1rem;
+    margin: 0;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--font-secondary-color);
+    cursor: pointer;
+    width: 12rem;
+}
+
+.timer-button-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

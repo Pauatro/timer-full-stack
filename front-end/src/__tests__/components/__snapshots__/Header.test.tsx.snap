@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header
+  className="header-container"
+>
+  <img
+    alt="MVST"
+    className="header-logo"
+    src="logo-light.svg"
+  />
+  <div
+    className="theme-selection-container"
+  >
+    <img
+      alt="Moon"
+      className="moon-icon"
+      src="moon-light.svg"
+    />
+    <div
+      className="toggle-switch-container"
+    >
+      <div
+        className="toggle-switch"
+      >
+        <input
+          checked={true}
+          className="toggle-switch-checkbox"
+          id="theme-switch"
+          name="theme-switch"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="toggle-switch-label"
+          htmlFor="theme-switch"
+        >
+          <span
+            className="toggle-switch-inner"
+          />
+          <span
+            className="toggle-switch-switch"
+          />
+        </label>
+      </div>
+    </div>
+    <img
+      alt="Sun"
+      className="sun-icon"
+      src="sun-light.svg"
+    />
+  </div>
+</header>
+`;
